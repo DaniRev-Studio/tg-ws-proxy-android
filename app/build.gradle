@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+}
+
+android {
+    namespace 'com.tgwsproxy'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.tgwsproxy"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        ndk {
+            abiFilters "arm64-v8a", "x86_64"
+        }
+
+        python {
+            // Chaquopy 17 ищет Python 3.11 на машине сборки.
+            // Указываем путь явно — поменяй если Python установлен в другом месте.
+            // Если Python 3.11 не установлен — скачай с python.org и измени путь.
+            buildPython "C:/Users/User/AppData/Local/Programs/Python/Python311/python.exe"
+            version "3.11"
+
+            pip {
+                install "cryptography"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}
