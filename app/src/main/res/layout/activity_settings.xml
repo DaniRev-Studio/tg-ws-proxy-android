@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_previous"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="#e0e0e0"
+                android:contentDescription="Назад" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Настройки"
+                android:textSize="22sp"
+                android:textColor="#e0e0e0"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+
+        <!-- Section: Connection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ПОДКЛЮЧЕНИЕ"
+            android:textSize="11sp"
+            android:textColor="#7eb8f7"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Host -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Адрес (host)"
+                    android:textColor="#aaa"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/editHost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="127.0.0.1"
+                    android:inputType="text"
+                    android:textColor="#e0e0e0"
+                    android:textColorHint="#555"
+                    android:textSize="15sp"
+                    android:fontFamily="monospace"
+                    android:background="@drawable/edit_bg"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="127.0.0.1 — только этот телефон  •  0.0.0.0 — вся сеть Wi-Fi"
+                    android:textColor="#666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Port -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Порт"
+                    android:textColor="#aaa"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/editPort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="1443"
+                    android:inputType="number"
+                    android:textColor="#e0e0e0"
+                    android:textColorHint="#555"
+                    android:textSize="15sp"
+                    android:fontFamily="monospace"
+                    android:background="@drawable/edit_bg"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Диапазон 1024–65535. По умолчанию: 1443"
+                    android:textColor="#666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Secret -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Secret"
+                    android:textColor="#aaa"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editSecret"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="32 hex-символа"
+                        android:inputType="textNoSuggestions"
+                        android:textColor="#7eb8f7"
+                        android:textColorHint="#555"
+                        android:textSize="13sp"
+                        android:fontFamily="monospace"
+                        android:background="@drawable/edit_bg"
+                        android:padding="10dp"
+                        android:maxLines="1" />
+
+                    <Button
+                        android:id="@+id/btnRandomSecret"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎲"
+                        android:textSize="18sp"
+                        android:backgroundTint="#1a3a5c"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ровно 32 hex-символа (0-9, a-f). Нажми 🎲 для случайного."
+                    android:textColor="#666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Section: Advanced -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ДОПОЛНИТЕЛЬНО"
+            android:textSize="11sp"
+            android:textColor="#7eb8f7"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="10dp" />
+
+        <!-- DC IPs -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DC IP-адреса"
+                    android:textColor="#aaa"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp" />
+
+                <EditText
+                    android:id="@+id/editDcIps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2:149.154.167.220&#10;4:149.154.167.220"
+                    android:inputType="textMultiLine"
+                    android:textColor="#e0e0e0"
+                    android:textColorHint="#555"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:background="@drawable/edit_bg"
+                    android:padding="10dp"
+                    android:minLines="2"
+                    android:gravity="top" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="По одному на строку: DC_номер:IP-адрес"
+                    android:textColor="#666"
+                    android:textSize="11sp"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <!-- Section: Cloudflare -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLOUDFLARE (обход блокировки)"
+            android:textSize="11sp"
+            android:textColor="#7eb8f7"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="10dp" />
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CF домен (необязательно)" android:textColor="#aaa" android:textSize="12sp" android:layout_marginBottom="6dp"/>
+                <EditText
+                    android:id="@+id/editCfDomain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="your-worker.your-name.workers.dev"
+                    android:inputType="textNoSuggestions"
+                    android:textColor="#e0e0e0"
+                    android:textColorHint="#555"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:background="@drawable/edit_bg"
+                    android:padding="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Свой Cloudflare Worker для надёжного обхода блокировки. Оставь пустым для использования публичного пула." android:textColor="#666" android:textSize="11sp" android:layout_marginTop="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Использовать CF fallback" android:textColor="#e0e0e0" android:textSize="15sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Включи если прямое WS соединение заблокировано" android:textColor="#666" android:textSize="11sp" android:layout_marginTop="3dp"/>
+                </LinearLayout>
+                <Switch
+                    android:id="@+id/switchFallbackCf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:thumbTint="#7eb8f7"
+                    android:trackTint="#1a3a5c"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 Как создать CF Worker: github.com/Flowseal/tg-ws-proxy → раздел CF Proxy Setup"
+            android:textColor="#555"
+            android:textSize="11sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Section: Autostart -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="АВТОЗАПУСК"
+            android:textSize="11sp"
+            android:textColor="#7eb8f7"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="10dp" />
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#16213e"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Запускать при загрузке"
+                        android:textColor="#e0e0e0"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Прокси стартует автоматически после перезагрузки телефона"
+                        android:textColor="#666"
+                        android:textSize="11sp"
+                        android:layout_marginTop="3dp" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchAutostart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:thumbTint="#7eb8f7"
+                    android:trackTint="#1a3a5c" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Save button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Сохранить"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#2196F3"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/txtSaveHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Изменения вступят в силу после перезапуска прокси"
+            android:textColor="#666"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="© DaniRev Studio"
+            android:textColor="#333"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:paddingBottom="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
