@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TG WS Proxy</string>
+    <string name="copyright">© DaniRev Studio</string>
+    <string name="version">v1.0.0</string>
+</resources>
