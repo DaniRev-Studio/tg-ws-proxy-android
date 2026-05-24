@@ -1,6 +1,5 @@
 # TG WS Proxy — Android APK
-
-Telegram MTProto WebSocket прокси в виде Android-приложения.  
+ 
 Работает как **фоновый сервис** — Telegram продолжает работать через прокси даже когда приложение свёрнуто.
 
 ---
