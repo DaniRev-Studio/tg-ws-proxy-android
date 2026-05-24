@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">TG WS Proxy</string>
     <string name="copyright">© DaniRev Studio</string>
-    <string name="version">v1.0.0</string>
+    <string name="version">v1.0.2</string>
 </resources>
